@@ -1,8 +1,8 @@
 import requests
 import os
-API_KEY = os.getenv("CN_API_KEY")
+#API_KEY = os.getenv("CN_API_KEY")
+API_KEY= "JrRSCrDZKW+dZganRjH/fA==XaRDaQmYu5rCo1Q1"
 def GetNutrition(query):
-
     url = "https://api.calorieninjas.com/v1/nutrition?query="
     r = requests.get(url+query, headers={'X-Api-Key': API_KEY})
     if r.status_code == requests.codes.ok:
@@ -19,4 +19,4 @@ def GetRecipe(query):
     else:
         print("Error:", r.status_code, r.text)
 if __name__=='__main__':
-    print(GetNutrition('burger'))
+    print(GetNutrition('mountain dew'))
