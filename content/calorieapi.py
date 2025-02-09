@@ -4,9 +4,9 @@ import os
 import json
 load_dotenv()
 API_KEY = os.getenv("CN_API_KEY")
+url = "https://api.calorieninjas.com/v1/nutrition?query="
 
-def GetNutrition(query):
-    url = "https://api.calorieninjas.com/v1/nutrition?query="
+def ProcessNutrition(query):
     r = requests.get(url+query, headers={'X-Api-Key': API_KEY})
     r1 = r.json()
 
@@ -14,6 +14,21 @@ def GetNutrition(query):
         return r1
     else:
         return "Error:" + str(r.status_code) + r.text
+
+
+
+def GetNutrition(query):
+    ItemList = []
+    if (',' in query):
+       queries= query.split(',')
+       for query in queries:
+           ItemList.append(ProcessNutrition(query))
+            
+    else:
+        ItemList.append(ProcessNutrition(query))
+    return ItemList
+        
+        
 
 
 def GetRecipe(query):
