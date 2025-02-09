@@ -24,7 +24,7 @@
 <body>
     <h1>Your Calories : <br></h1>
     <br><br>
-    <h4>Breakfast : </h4>
+    <h3>Breakfast : </h3>
     <div class="container">
     {% for thing in bf %}
     {% for item in thing.items %}
@@ -48,13 +48,76 @@
     {% endfor %}
 </div>
     <br><br>
-    <h4>Lunch : </h4>
-    {{ lu }}
+    <h3>Lunch : </h3>
+    <div class="container">
+        {% for thing in lu %}
+        {% for item in thing.items %}
+        <div class="itemdiv">
+        <ul>
+            <li>Name : {{item.name}}</li>
+            <li>Calories : {{item.calories}}</li>
+            <li>Serving Size (g) : {{item.serving_size_g}}</li>
+            <li>Total Fats: {{item.fat_saturated_g}}</li>
+            <li>protiens: {{item.protein_g}}</li>
+            <li>Sodium in mg: {{item.sodium_mg}}</li>
+            <li>Pottasium in mg: {{item.potassium_mg}}</li>
+            <li> Cholestrol in mg: {{item.cholesterol_mg}}</li>
+            <li>carbohydrates total (g): {{item.carbohydrates_total_g}}</li>
+            <li>Fibers (g): {{item.fiber_g}}</li>
+            <li>Sugar (g): sugar (g):{{item.sugar_g}}</li>
+        
+        </ul>
+    </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
     <br><br>
-    <h4>Dinner : </h4>
-    {{ din }}
+    <h3>Dinner : </h3>
+    <div class="container">
+        {% for thing in din %}
+        {% for item in thing.items %}
+        <div class="itemdiv">
+        <ul>
+            <li>Name : {{item.name}}</li>
+            <li>Calories : {{item.calories}}</li>
+            <li>Serving Size (g) : {{item.serving_size_g}}</li>
+            <li>Total Fats: {{item.fat_saturated_g}}</li>
+            <li>protiens: {{item.protein_g}}</li>
+            <li>Sodium in mg: {{item.sodium_mg}}</li>
+            <li>Pottasium in mg: {{item.potassium_mg}}</li>
+            <li> Cholestrol in mg: {{item.cholesterol_mg}}</li>
+            <li>carbohydrates total (g): {{item.carbohydrates_total_g}}</li>
+            <li>Fibers (g): {{item.fiber_g}}</li>
+            <li>Sugar (g): sugar (g):{{item.sugar_g}}</li>
+        
+        </ul>
+    </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
     <br><br>
-    <h4>Misc : </h4>
-    {{ mi }}
+    <h3>Misc : </h3>
+    <div class="container">
+        {% for thing in mi %}
+        {% for item in thing.items %}
+        <div class="itemdiv">
+        <ul>
+            <li>Name : {{item.name}}</li>
+            <li>Calories : {{item.calories}}</li>
+            <li>Serving Size (g) : {{item.serving_size_g}}</li>
+            <li>Total Fats: {{item.fat_saturated_g}}</li>
+            <li>protiens: {{item.protein_g}}</li>
+            <li>Sodium in mg: {{item.sodium_mg}}</li>
+            <li>Pottasium in mg: {{item.potassium_mg}}</li>
+            <li> Cholestrol in mg: {{item.cholesterol_mg}}</li>
+            <li>carbohydrates total (g): {{item.carbohydrates_total_g}}</li>
+            <li>Fibers (g): {{item.fiber_g}}</li>
+            <li>Sugar (g): sugar (g):{{item.sugar_g}}</li>
+        
+        </ul>
+    </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
 </body>
 </html>
