@@ -1,7 +1,7 @@
 import requests
 import os
 #API_KEY = os.getenv("CN_API_KEY")
-API_KEY= "JrRSCrDZKW+dZganRjH/fA==XaRDaQmYu5rCo1Q1"
+
 def GetNutrition(query):
     url = "https://api.calorieninjas.com/v1/nutrition?query="
     r = requests.get(url+query, headers={'X-Api-Key': API_KEY})
