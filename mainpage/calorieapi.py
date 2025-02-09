@@ -1,6 +1,8 @@
 import requests
+from dotenv import load_dotenv
 import os
-#API_KEY = os.getenv("CN_API_KEY")
+load_dotenv()
+API_KEY = os.getenv("CN_API_KEY")
 
 def GetNutrition(query):
     url = "https://api.calorieninjas.com/v1/nutrition?query="
