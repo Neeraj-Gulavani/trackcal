@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Tracker</title>
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Replace with your image path */
+            background-size: cover; /* Cover the whole page */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent repeating */
+            height: 100vh;
+        }
+        #container{
+            margin: auto;
+            text-align: center;
+            background-color: pink;
+            border-radius: 30px;
+            width: 500px;
+            height: 550px;
+            border: 2px solid palevioletred;
+        }
+        input{
+            width: 250px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 15px;
+            text-align: center;
+        }
+        button{
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter Food Item : <br></h1>
+    <div id="container">
+    <h1>YOUR DIET<br></h1>
     
     <form action="{% url 'content:data' %}" method="POST">
         {% csrf_token %}
         <div id="breakfastdiv">
-            <h5>Breakfast</h5>
+            <h3>Breakfast</h5>
             <input type="text" name="bfield">
         </div>
         <div id="lunchdiv">
-            <h5>Lunch</h5>
+            <h3>Lunch</h5>
             <input type="text" name="lfield">
         </div>
-        <input type="text" name="item">
-        <input type="submit">
+        <div id="dinn">
+            <h3>Dinner</h5>
+            <input type="text" name="dfield">
+        </div>
+        <div id="misc">
+            <h3>miscellaneous</h5>
+            <input type="text" name="mfield">
+        
+            <center><button type="submit" class="btn btn-success">CONFIRM</button></center>
     </form>
+    </div>
     
 </body>
 </html>
