@@ -12,6 +12,8 @@ def content(request):
         dinnList = calorieapi.GetNutrition(request.POST.get("dfield"))
         miscList = calorieapi.GetNutrition(request.POST.get("mfield"))
         return render(request,'content/data.html', {
-            #'cal' : r1["items"][0]["calories"]
-            
+            'bf' : breakfList,
+            'lu' : LunchList,
+            'din': dinnList,
+            'mi' : miscList
         })
