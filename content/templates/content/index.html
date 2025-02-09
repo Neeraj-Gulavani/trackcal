@@ -7,9 +7,18 @@
 </head>
 <body>
     <h1>Enter Food Item : <br></h1>
+    
     <form action="{% url 'content' %}" method="POST">
         {% csrf_token %}
-
+        <div id="breakfastdiv">
+            <h5>Breakfast</h5>
+            <input type="text" name="bfield">
+        </div>
+        <br>
+        <div id="lunchdiv">
+            <h5>Lunch</h5>
+            <input type="text" name="lfield">
+        </div>
         <input type="text" name="item">
         <input type="submit">
     </form>
