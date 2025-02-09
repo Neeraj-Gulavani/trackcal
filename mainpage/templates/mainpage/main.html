@@ -5,17 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>trackcal</title>
+    
     <style>
-        
+        body{
+            background-color: lightgoldenrodyellow;
+        }
+        h1{
+            font-size: 100px;
+            
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2{
+            text-align: center;
+            font-size: 35px;
+        }
+        ul{
+            text-align: center;
+            font-size: 25px;
+        }
+        button{
+            width: 120px;
+            height: 60px;
+        }
+        #points{
+            background-color: pink;
+            border-radius: 25px;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        #heading{
+            background-color: lightskyblue;
+            border-radius: 25px;
+            width: 600px;
+            margin: auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <h1> TRACKCAL </h1>
-    <h2>Track Calories and evaluate your diets</h2>
-    <ul>Get information on your diet</ul>
-    <ul>Get suggesed on changes</ul>
-    <ul>count calories and protiens</ul>
+
+    <div id="heading"><h1>TRACKCAL</h1></div>
     
+
+    <h2>Track Calories and evaluate your diets</h2>
+    <div id="points">
+        <ul>Get information on your diet</ul>
+        <ul>Get suggesed on changes</ul>
+        <ul>count calories and protiens</ul>
+    </div>
+    <form action="{% url 'redirect'%}" method="POST">
+        {% csrf_token%}
+    <center><button type="submit" class="btn btn-success">START</button></center>
+    </form>
 </body>
 </html>
