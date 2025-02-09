@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .container {
+            display: flex;
+        }
+        .itemdiv {
+            margin-left: 20px;
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            border: 2px solid palevioletred;
+        }
+        li {
+            margin-top: 8px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Tracker</title>
@@ -9,7 +25,28 @@
     <h1>Your Calories : <br></h1>
     <br><br>
     <h4>Breakfast : </h4>
-    {{ bf }}
+    <div class="container">
+    {% for thing in bf %}
+    {% for item in thing.items %}
+    <div class="itemdiv">
+    <ul>
+        <li>Name : {{item.name}}</li>
+        <li>Calories : {{item.calories}}</li>
+        <li>Serving Size (g) : {{item.serving_size_g}}</li>
+        <li>Total Fats: {{item.fat_saturated_g}}</li>
+        <li>protiens: {{item.protein_g}}</li>
+        <li>Sodium in mg: {{item.sodium_mg}}</li>
+        <li>Pottasium in mg: {{item.potassium_mg}}</li>
+        <li> Cholestrol in mg: {{item.cholesterol_mg}}</li>
+        <li>carbohydrates total (g): {{item.carbohydrates_total_g}}</li>
+        <li>Fibers (g): {{item.fiber_g}}</li>
+        <li>Sugar (g): sugar (g):{{item.sugar_g}}</li>
+    
+    </ul>
+</div>
+    {% endfor %}
+    {% endfor %}
+</div>
     <br><br>
     <h4>Lunch : </h4>
     {{ lu }}
