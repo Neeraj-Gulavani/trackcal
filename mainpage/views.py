@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 def index(request):
-    return render(request,"mainpage/main.html",{})
+        return render(request,"mainpage/main.html",{})
 
 def redirect(request):
     if request.method=='POST':
-        redirect("")
-from django.shortcuts import redirect
+        return HttpResponseRedirect(reverse("content:index"))
+
 
 
 # Create your views here.
